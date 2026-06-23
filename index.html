@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.whatsapp.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Kairos CRM — O Sistema Operacional de Vendas no WhatsApp</title>
   <meta name="description" content="CRM omnichannel para WhatsApp, Instagram e Marketplaces. Prospecção automática de leads, IA 24/7 e recuperação de vendas. Centralize seu atendimento e venda mais." />
   <meta name="keywords" content="CRM para WhatsApp, automação de atendimento, CRM omnichannel, prospecção de leads, recuperação de vendas, chatbot WhatsApp" />
@@ -13,7 +18,7 @@
   <meta property="og:title" content="Kairos CRM — O Sistema Operacional de Vendas no WhatsApp" />
   <meta property="og:description" content="Centralize WhatsApp, Instagram e Marketplaces. Prospecte leads em menos de 1 minuto e atenda 24/7 com IA." />
   <meta property="og:image" content="assets/logo-kairos.png" />
-  <meta property="og:url" content="https://kairoscrm.online/" />
+  <meta property="og:url" content="https://lp.kairoscrm.online/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
@@ -624,6 +629,24 @@
       <span class="footer__status"><i class="status-dot"></i> Sistemas Operacionais Online</span>
     </div>
   </footer>
+
+  <!-- =================== BANNER LGPD/COOKIES =================== -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de privacidade" aria-hidden="true">
+    <div class="cookie-banner__inner">
+      <p>Este site utiliza cookies e tecnologias semelhantes para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="https://politica.kairoscrm.online/" target="_blank" rel="noopener">Política de Privacidade</a> e com o tratamento dos seus dados conforme a LGPD.</p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--primary cookie-banner__accept" id="cookieAccept">Aceitar</button>
+        <button class="btn btn--outline cookie-banner__reject" id="cookieReject">Recusar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Honeypot (anti-bot, invisível) -->
+  <form class="hp-trap" aria-hidden="true" tabindex="-1">
+    <input type="text" name="website" autocomplete="off" tabindex="-1" />
+    <input type="email" name="email_confirm" autocomplete="off" tabindex="-1" />
+  </form>
+
   <script src="js/main.js"></script>
 </body>
 </html>
