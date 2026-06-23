@@ -6,6 +6,124 @@
 
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ==========================================================
+     SEGURANÇA: Rate Limiting nos CTAs do WhatsApp
+     ========================================================== */
+  var WA_LIMIT = 5;           // máximo de cliques permitidos
+  var WA_WINDOW = 60000;      // janela de tempo (60 segundos)
+  var waClicks = [];
+
+  function showRateToast() {
+    var toast = document.getElementById('rateToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'rateToast';
+      toast.className = 'rate-toast';
+      toast.textContent = '⚠️ Muitos cliques seguidos. Aguarde um momento.';
+      document.body.appendChild(toast);
+    }
+    toast.classList.add('is-visible');
+    setTimeout(function () { toast.classList.remove('is-visible'); }, 3500);
+  }
+
+  function isRateLimited() {
+    var now = Date.now();
+    waClicks = waClicks.filter(function (t) { return now - t < WA_WINDOW; });
+    if (waClicks.length >= WA_LIMIT) {
+      showRateToast();
+      return true;
+    }
+    waClicks.push(now);
+    return false;
+  }
+
+  // Intercepta todos os links do WhatsApp
+  document.querySelectorAll('a[href*="api.whatsapp.com"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (isRateLimited()) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  });
+
+  /* ==========================================================
+     SEGURANÇA: Honeypot — detecta bots
+     ========================================================== */
+  var hpTrap = document.querySelector('.hp-trap');
+  if (hpTrap) {
+    hpTrap.addEventListener('submit', function (e) {
+      e.preventDefault(); // bot preenche campos invisíveis
+    });
+    // Monitora se bot preencheu os campos
+    var hpInputs = hpTrap.querySelectorAll('input');
+    setInterval(function () {
+      hpInputs.forEach(function (input) {
+        if (input.value.length > 0) {
+          // Bot detectado — desativa CTAs
+          document.querySelectorAll('a[href*="api.whatsapp.com"]').forEach(function (link) {
+            link.style.pointerEvents = 'none';
+            link.setAttribute('aria-disabled', 'true');
+          });
+        }
+      });
+    }, 3000);
+  }
+
+  /* ==========================================================
+     SEGURANÇA: Banner LGPD / Cookies
+     ========================================================== */
+  var cookieBanner = document.getElementById('cookieBanner');
+  var cookieAccept = document.getElementById('cookieAccept');
+  var cookieReject = document.getElementById('cookieReject');
+
+  function getCookieConsent() {
+    try { return localStorage.getItem('kairos_cookie_consent'); } catch (e) { return null; }
+  }
+  function setCookieConsent(value) {
+    try { localStorage.setItem('kairos_cookie_consent', value); } catch (e) {}
+  }
+
+  if (cookieBanner && !getCookieConsent()) {
+    setTimeout(function () {
+      cookieBanner.setAttribute('aria-hidden', 'false');
+      cookieBanner.classList.add('is-visible');
+    }, 1500);
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', function () {
+      setCookieConsent('accepted');
+      cookieBanner.classList.remove('is-visible');
+      cookieBanner.setAttribute('aria-hidden', 'true');
+    });
+  }
+  if (cookieReject) {
+    cookieReject.addEventListener('click', function () {
+      setCookieConsent('rejected');
+      cookieBanner.classList.remove('is-visible');
+      cookieBanner.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  /* ==========================================================
+     SEGURANÇA: Proteção XSS — sanitiza qualquer input
+     ========================================================== */
+  function sanitize(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+  // Expor globalmente caso necessário
+  window.__sanitize = sanitize;
+
+  /* ==========================================================
+     SEGURANÇA: Bloqueia iframe embedding (JS fallback)
+     ========================================================== */
+  if (window.self !== window.top) {
+    document.body.innerHTML = '<p style="padding:2rem;font-size:1.2rem;text-align:center;">Este conteúdo não pode ser exibido em iframe.</p>';
+  }
+
   /* ---------- NAV: glassmorphism ao rolar ---------- */
   var nav = document.getElementById('nav');
   function onScroll() {
@@ -24,7 +142,6 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     });
-    // fecha ao clicar num link
     menu.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         menu.classList.remove('is-open');
@@ -158,7 +275,7 @@
   var playBtn = document.querySelector('.video__play');
   if (playBtn) {
     playBtn.addEventListener('click', function () {
-      // TODO: substituir por embed do vídeo real
+      if (isRateLimited()) return;
       window.open('https://api.whatsapp.com/send/?phone=5521959033061&text=Ol%C3%A1%2C+quero+ver+a+demonstra%C3%A7%C3%A3o+do+Kairos+CRM&type=phone_number&app_absent=0', '_blank', 'noopener');
     });
   }
