@@ -271,6 +271,33 @@
   var heroBadge = document.querySelector('.hero .badge');
   if (heroBadge && !prefersReduced) heroBadge.classList.add('badge--breathe');
 
+  /* ---------- Features Tabs ---------- */
+  var ftTabs = document.querySelectorAll('.ft-tab');
+  var ftPanels = document.querySelectorAll('.features__panel');
+  console.log('Tabs found:', ftTabs.length, 'Panels found:', ftPanels.length);
+  if (ftTabs.length && ftPanels.length) {
+    ftTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.getAttribute('data-tab');
+        console.log('Tab clicked:', target);
+        ftTabs.forEach(function (t) { t.classList.remove('is-active'); });
+        ftPanels.forEach(function (p) { p.classList.remove('is-active'); });
+        tab.classList.add('is-active');
+        var panel = document.getElementById('panel-' + target);
+        console.log('Panel found:', panel ? 'yes' : 'no', 'ID:', 'panel-' + target);
+        if (panel) {
+          panel.classList.add('is-active');
+          // Re-trigger reveal animations for newly visible cards
+          panel.querySelectorAll('[data-reveal]:not(.is-visible)').forEach(function (el) {
+            if (revealObs) revealObs.observe(el);
+          });
+        }
+      });
+    });
+  } else {
+    console.error('Tab setup failed - tabs or panels not found');
+  }
+
   /* ---------- Vídeo placeholder (sem ação real) ---------- */
   var playBtn = document.querySelector('.video__play');
   if (playBtn) {
