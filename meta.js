@@ -1,12 +1,12 @@
 (() => {
   const bridge = "https://kairos-crm-vendas.agenciakairosdigital.chatgpt.site/api/meta";
+  const pixelId = "1911595020205312";
   const preferenceKey = "kairos-marketing-consent";
   const plans = new Set(["starter", "pro", "ultimate"]);
   const cookie = name => document.cookie.split("; ").find(part => part.startsWith(name + "="))?.slice(name.length + 1);
   const panel = document.querySelector("[data-marketing-consent]");
   const settings = document.querySelector("[data-marketing-settings]");
   let choice;
-  let pixelId;
   let sentPageView = false;
   let lastClickId;
 
@@ -52,7 +52,7 @@
   }
 
   function send(name, plan) {
-    if (choice !== "accepted" || !pixelId) return;
+    if (choice !== "accepted") return;
     const id = crypto.randomUUID();
     const params = plan ? { plan } : {};
     window.fbq(name === "SelectPlan" || name === "RegistrationClick" ? "trackCustom" : "track", name, params, { eventID: id });
@@ -110,25 +110,18 @@
   }
 
   if (!panel || !settings) return;
-  fetch(bridge + "/config", { credentials: "omit", cache: "no-store" })
-    .then(response => response.ok ? response.json() : null)
-    .then(config => {
-      if (!config?.enabled || !/^\d{8,24}$/.test(config.pixelId)) return;
-      pixelId = config.pixelId;
-      settings.hidden = false;
-      settings.addEventListener("click", () => {
-        panel.hidden = !panel.hidden;
-        if (!panel.hidden) panel.querySelector("[data-choice]").focus();
-      });
-      for (const button of panel.querySelectorAll("[data-choice]")) {
-        button.addEventListener("click", () => {
-          applyChoice(button.dataset.choice);
-          settings.focus({ preventScroll: true });
-        });
-      }
-      document.addEventListener("click", recordClick);
-      if (choice === "accepted") applyChoice(choice);
-      else if (choice !== "rejected") panel.hidden = false;
-    })
-    .catch(() => {});
+  settings.hidden = false;
+  settings.addEventListener("click", () => {
+    panel.hidden = !panel.hidden;
+    if (!panel.hidden) panel.querySelector("[data-choice]").focus();
+  });
+  for (const button of panel.querySelectorAll("[data-choice]")) {
+    button.addEventListener("click", () => {
+      applyChoice(button.dataset.choice);
+      settings.focus({ preventScroll: true });
+    });
+  }
+  document.addEventListener("click", recordClick);
+  if (choice === "accepted") applyChoice(choice);
+  else if (choice !== "rejected") panel.hidden = false;
 })();
