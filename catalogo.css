@@ -1,0 +1,112 @@
+.screen-catalog {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.screen-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #cbd8c7;
+  border-radius: 11px;
+  background: #fcfdf8;
+  box-shadow: 0 3px 12px #273b250a;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.screen-card:hover {
+  transform: translateY(-3px);
+  border-color: #77975b;
+  box-shadow: 0 12px 25px #273b251b;
+}
+.screen-card-featured { grid-column: span 2; }
+.screen-card-media {
+  display: block;
+  background: #e5ebe5;
+  border-bottom: 1px solid #cbd8c7;
+  overflow: hidden;
+}
+.screen-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+.screen-card-featured .screen-card-media img {
+  aspect-ratio: 32 / 9;
+  object-fit: cover;
+  object-position: center 27%;
+}
+.screen-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+}
+.screen-card-label {
+  color: #487239;
+  font: 700 10px/1.3 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.screen-card-copy h3 { margin-top: 7px; font-size: clamp(17px, 1.85vw, 23px); line-height: 1.13; text-wrap: initial; }
+.screen-card-copy p { margin-top: 8px; color: var(--paper-muted); font-size: 13px; }
+.screen-card-action { display: inline-flex; align-items: center; gap: 5px; color: #366322; margin-top: auto; padding-top: 13px; font-size: 12px; font-weight: 700; }
+.screen-card:hover .screen-card-action { text-decoration: underline; text-underline-offset: 3px; }
+.screen-credit { margin-top: 13px; color: var(--paper-muted); font-size: 12px; }
+.integration-full { margin-top: 20px; }
+.catalog-toggle {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-inline: auto;
+  padding: 9px 13px;
+  border: 1px solid #afc0a8;
+  border-radius: 8px;
+  color: #2d542c;
+  background: #fbfcf7;
+  font-size: 13px;
+  font-weight: 750;
+}
+.catalog-toggle:hover { border-color: #74916e; }
+.integration-full .integration-grid { margin-top: 14px; }
+
+.resource-page { background: var(--paper); color: var(--ink); }
+.resource-header { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.resource-intro { padding-block: 37px 24px; }
+.resource-intro .eyebrow { margin-block: 18px 9px; color: #3c672e; }
+.resource-intro h1 { font-size: clamp(37px, 5.8vw, 72px); text-wrap: initial; }
+.resource-intro p:not(.eyebrow) { color: var(--paper-muted); margin-top: 13px; font-size: 17px; max-width: 650px; }
+.resource-back { color: #365e29; font-weight: 700; font-size: 14px; }
+.resource-back:hover, .detail-source a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.resource-content { display: grid; gap: 23px; padding-bottom: 58px; }
+.detail-screen { margin: 0; min-width: 0; }
+.detail-screen img { display: block; width: 100%; height: auto; border: 1px solid #b9c8b7; border-radius: 10px; background: #e8eee7; }
+.detail-screen h2 { margin-bottom: 13px; font-size: clamp(27px, 3.7vw, 41px); }
+.detail-screen figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px 11px; color: var(--paper-muted); font-size: 12px; margin-top: 7px; }
+.detail-screen figcaption a { color: #335d2c; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.detail-usage { border: 1px solid #ccd9c9; border-radius: 10px; padding: clamp(15px, 2.5vw, 30px); background: #fbfcf7; }
+.detail-usage h2 { font-size: 26px; margin-bottom: 11px; }
+.detail-usage ul { padding-left: 20px; color: #405743; }
+.detail-usage li + li { margin-top: 5px; }
+.detail-source { color: var(--paper-muted); font-size: 12px; margin-top: 14px; }
+.detail-source a { color: #335d2c; font-weight: 700; }
+
+@media (max-width: 950px) {
+  .screen-catalog { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  .screen-catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .screen-card-featured .screen-card-media img { aspect-ratio: 16 / 9; }
+  .screen-card-copy { padding: 11px; }
+  .screen-card-copy h3 { font-size: 16px; overflow-wrap: anywhere; }
+  .screen-card-copy p { font-size: 12px; }
+}
+@media (max-width: 360px) {
+  .screen-card-copy { padding: 9px; }
+  .resource-header .brand img { width: 112px; }
+  .resource-header .button { padding-inline: 9px; }
+}

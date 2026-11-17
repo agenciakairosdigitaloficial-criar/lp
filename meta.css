@@ -1,0 +1,29 @@
+[data-marketing-consent][hidden], [data-marketing-settings][hidden] { display: none; }
+.marketing-consent {
+  position: fixed;
+  z-index: 20;
+  bottom: 16px;
+  left: 16px;
+  width: min(410px, calc(100% - 32px));
+  padding: 17px;
+  border: 1px solid #4d7251;
+  border-radius: 12px;
+  color: #eef7eb;
+  background: #10271b;
+  box-shadow: 0 8px 35px #08161060;
+}
+.marketing-consent h2 { font-size: 19px; margin-bottom: 6px; }
+.marketing-consent p { font-size: 13px; color: #d6e4d5; margin-bottom: 12px; }
+.marketing-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.marketing-actions .button { cursor: pointer; min-height: 40px; padding: 6px 12px; font-size: 13px; }
+.marketing-settings {
+  font: inherit;
+  font-size: 13px;
+  background: none;
+  color: #dfebdc;
+  border: 0;
+  padding: 6px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -1,19 +1,895 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="facebook-domain-verification" content="vpgltpw0xh2w0w79pecfm9sghb1mvt" />
-    <meta name="description" content="Atendimento com IA, WhatsApp Oficial com coexistência e CRM de vendas em uma única plataforma." />
-    <meta property="og:title" content="KAIROS CRM — Atendimento com IA. WhatsApp Oficial. Zero bloqueios." />
-    <meta property="og:description" content="Automatize o atendimento, venda mais e use o mesmo WhatsApp no celular e no CRM." />
-    <meta property="og:image" content="/og-intro.png" />
-    <link rel="icon" href="/kairos-logo.png" />
-    <title>KAIROS CRM — Tempo para vender em outro nível</title>
-    <script type="module" crossorigin src="/assets/index-_zQfmA8d.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-COH70-II.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081610">
+  <meta name="description" content="Centralize WhatsApp e Instagram, organize seu funil e automatize atendimento, follow-up e recuperação de vendas com o KAIROS CRM.">
+  <meta property="og:title" content="KAIROS CRM | Da primeira mensagem à próxima venda">
+  <meta property="og:description" content="CRM, atendimento e automação para quem vende no digital.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <title>KAIROS CRM | Da primeira mensagem à próxima venda</title>
+  <link rel="icon" href="assets/kairos-symbol.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="showcase.css">
+  <link rel="stylesheet" href="catalogo.css">
+  <script src="main.js" defer></script>
+  <script src="showcase.js" defer></script>
+  <link rel="stylesheet" href="meta.css">
+  <script src="meta.js" defer></script>
+  <meta name="facebook-domain-verification" content="vpgltpw0xh2w0w79pecfm9sghb1mvt" />
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M20 15a3 3 0 0 1-3 3H9l-5 3V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3zM8 9h8m-8 4h5"/></symbol>
+    <symbol id="i-funnel" viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5c0 6.4 3.1 9.5 9.5 9.5-6.4 0-9.5 3.1-9.5 9.5 0-6.4-3.1-9.5-9.5-9.5 6.4 0 9.5-3.1 9.5-9.5z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="2" y="17" width="7" height="4" rx="1"/><rect x="15" y="17" width="7" height="4" rx="1"/><path d="M12 8v5m-6.5 4v-4h13v4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m21 3-5.5 18-4.3-8.2L3 8.5 21 3ZM11.2 12.8 21 3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4m8-4v4m-8 9h2m4 0h2"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 8V7l14-4v5m-14 0h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Zm18 4h-6a2 2 0 0 0 0 4h6"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4a2 2 0 0 0 2 2h4l10 4V4L9 8H5a2 2 0 0 0-2 2Zm6 6 2 5H8l-2-5m3-8v8m13-6v4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 13h6m-6 4h6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M8 16v-4m5 4V8m5 8V4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s7-3.5 7-9V5l-7-3-7 3v8c0 5.5 7 9 7 9Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 10-12h-7z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.8 7.4l-4.4 1 1.2-4.2a8.5 8.5 0 1 1 16-4.2Z"/><path d="M9 8c-.7 0-1.1.8-1 1.5.2 2.4 2.7 4.9 5.1 5.4.9.2 1.9-.3 1.9-1.1l-2-1-1 .7a6 6 0 0 1-2.4-2.5l.5-1.1L9 8Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 22c-4.2 0-7-2.8-7-6 0-3 1.8-5.7 4.2-7.8-.1 2 .7 2.8 1.6 2.9C12.4 8.7 13 5 12.5 2c4.2 3.3 6.5 8 6.5 13.9 0 3.5-2.9 6.1-7 6.1Z"/><path d="M12 22c-1.6 0-2.8-1.1-2.8-2.6 0-1.1.9-2 2.8-3.7 1.8 1.7 2.8 2.6 2.8 3.7 0 1.5-1.2 2.6-2.8 2.6Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M4 8h16l1 13H3L4 8Zm4 2V7a4 4 0 0 1 8 0v3"/><path d="M8 13h.01m8 0h.01"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m7 6-6 6 6 6m10-12 6 6-6 6m-3-16-4 20"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5 3.5-5 3.5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2m2-15a3 3 0 0 1 0 6m1 3a4 4 0 0 1 3 4v2"/></symbol>
+    <symbol id="i-device" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0m-7 7v3m-3 0h6"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1.3"/><path d="m3 17 5-4 3 2.5 4.5-5L21 16"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3H4.7A1.7 1.7 0 0 0 3 5c.9 8.3 7.5 14.9 15.8 16a1.7 1.7 0 0 0 2-1.7V17l-5-2-1.4 1.5A12.3 12.3 0 0 1 7.5 9L9 7.7 7 3Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M6 21V5l8-2v18m0-13h4v13M9 8h2m-2 4h2m-2 4h2"/></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 9h6m-6 4h6m-6 4h3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 9c0 5-7 11-7 11S5 14 5 9a7 7 0 0 1 14 0Z"/><circle cx="12" cy="9" r="2.3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-.8A4.4 4.4 0 1 1 18 18H7Z"/></symbol>
+    <symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11m5-7h3m-3 3h3"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v6a4 4 0 0 1-8 0V4Zm0 2H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 2v5m-4 1h8"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></symbol>
+    <symbol id="i-cursor" viewBox="0 0 24 24"><path d="m4 3 15 8-7 1.5 4 6.5-2.5 1.5-4-6.5L5 19 4 3Z"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9L4 7.5m8 4.5 8-4.5M12 12v9M8 5.2l8 4.5"/></symbol>
+    <symbol id="i-board" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16m6-16v16M6 8v3m6-3v6m6-6v4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 14 4-4m-1-4 2-2a3.5 3.5 0 0 1 5 5l-2 2m-7 7-2 2a3.5 3.5 0 0 1-5-5l2-2"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="2.5"/><circle cx="18.5" cy="5.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="m8 10.8 8-4.1m-8 6.5 8 4.1"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.3-3.5 1.4 1.4 0 0 1 .9-2.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><path d="M7 12h.01M9 8h.01m4-1h.01m4 3h.01" stroke-width="2.5"/></symbol>
+  </svg>
+  <a class="skip-link" href="#conteudo">Ir ao conteúdo</a>
+  <header class="site-header" id="inicio">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="KAIROS CRM, início"><img src="assets/kairos-logo.png" alt="KAIROS CRM" width="148" height="40"></a>
+      <nav class="nav" id="navegacao" aria-label="Navegação principal">
+        <a href="#plataforma">Plataforma</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#integracoes">Integrações</a>
+        <a href="#planos">Planos</a>
+        <a class="mobile-login" href="https://kairoscrm.online/login">Entrar</a>
+      </nav>
+      <div class="header-actions">
+        <a class="login-link" href="https://kairoscrm.online/login">Entrar</a>
+        <a class="button button-small button-lime" href="https://kairoscrm.online/register">Criar conta <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
+        <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-controls="navegacao" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span class="signal"></span> CRM, AUTOMAÇÃO E IA</p>
+          <h1 id="hero-title">Da primeira<br>mensagem<br><em>à próxima venda.</em></h1>
+          <p class="hero-lead">Atenda no WhatsApp e no Instagram, organize seu funil e automatize o que toma tempo da sua equipe. Tudo no KAIROS CRM.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="https://kairoscrm.online/register">Criar minha conta <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="button button-outline" href="#plataforma"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Explorar plataforma</a>
+          </div>
+        </div>
+
+        <div class="demo-wrap">
+          <div class="demo-frame">
+            <div class="demo-top">
+              <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="demo-title">KAIROS CRM<span class="demo-title-context"> <b>/</b> Sua operação</span></span>
+              <span class="demo-label"><i></i> Demonstração</span>
+            </div>
+            <div class="demo-body">
+              <div class="demo-rail" aria-hidden="true">
+                <img src="assets/kairos-symbol.png" alt="" width="19" height="16">
+                <span class="rail-active"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
+                <span><svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg></span>
+                <span><svg class="icon" aria-hidden="true"><use href="#i-funnel"/></svg></span>
+                <span><svg class="icon" aria-hidden="true"><use href="#i-flow"/></svg></span>
+              </div>
+              <div class="demo-main">
+                <div role="tablist" aria-label="Demonstração do KAIROS CRM" class="demo-tabs" data-tabs>
+                  <button type="button" role="tab" id="tab-visao" aria-controls="demo-visao" aria-selected="true">Visão geral</button>
+                  <button type="button" role="tab" id="tab-inbox" aria-controls="demo-inbox" aria-selected="false" tabindex="-1">Conversas</button>
+                  <button type="button" role="tab" id="tab-flow" aria-controls="demo-flow" aria-selected="false" tabindex="-1">Automações</button>
+                </div>
+
+                <div role="tabpanel" id="demo-visao" aria-labelledby="tab-visao" tabindex="0" class="demo-pane">
+                  <div class="demo-heading"><strong>Painel comercial</strong><span>Últimos 7 dias</span></div>
+                  <div class="metrics">
+                    <div><span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg> Novos leads</span><strong>284</strong><small>+18%</small></div>
+                    <div><span><svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg> Conversas</span><strong>156</strong><small>+12%</small></div>
+                    <div><span><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg> Vendas</span><strong>32</strong><small>+24%</small></div>
+                  </div>
+                  <div class="chart-card">
+                    <div class="chart-heading"><strong>Leads por dia</strong><span><i></i> Novos leads</span></div>
+                    <div class="chart-plot" role="img" aria-label="Exemplo de gráfico de entradas de leads. Segunda 24, terça 34, quarta 29, quinta 46, sexta 40, sábado 51 e domingo 60.">
+                      <div class="chart-axis" aria-hidden="true"><span>60</span><span>45</span><span>30</span><span>15</span><span>0</span></div>
+                      <div class="chart-lines" aria-hidden="true">
+                        <span style="--bar:40%"></span><span style="--bar:57%"></span><span style="--bar:48%"></span><span style="--bar:77%"></span><span style="--bar:67%"></span><span style="--bar:85%"></span><span style="--bar:100%"></span>
+                      </div>
+                      <div class="chart-days" aria-hidden="true"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div role="tabpanel" id="demo-inbox" aria-labelledby="tab-inbox" tabindex="0" class="demo-pane" hidden>
+                  <div class="demo-heading"><strong>Caixa de entrada</strong><span>WhatsApp conectado</span></div>
+                  <div class="demo-chat">
+                    <div class="chat-contact"><span>MC</span><div><strong>Marina Costa</strong><small>WhatsApp · Em atendimento</small></div></div>
+                    <p>Oi! Ainda consigo finalizar meu pedido?</p>
+                    <p class="chat-reply">Oi, Marina! Posso te ajudar. Você prefere pagar por Pix ou cartão?</p>
+                    <p>Por Pix, por favor.</p>
+                    <div class="chat-footer"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Lead movido para <b>Em negociação</b></div>
+                  </div>
+                </div>
+
+                <div role="tabpanel" id="demo-flow" aria-labelledby="tab-flow" tabindex="0" class="demo-pane" hidden>
+                  <div class="demo-heading"><strong>Recuperação de vendas</strong><span>Fluxo ativo</span></div>
+                  <ol class="demo-flow">
+                    <li><span><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span><div><small>Gatilho</small><strong>Compra iniciada</strong></div></li>
+                    <li><span><svg class="icon" aria-hidden="true"><use href="#i-flow"/></svg></span><div><small>Condição</small><strong>Pagamento pendente</strong></div></li>
+                    <li><span><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span><div><small>Ação</small><strong>Enviar lembrete no WhatsApp</strong></div></li>
+                    <li><span><svg class="icon" aria-hidden="true"><use href="#i-funnel"/></svg></span><div><small>Próxima etapa</small><strong>Atualizar o funil quando a venda for aprovada</strong></div></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-toast" aria-hidden="true">
+            <span class="toast-icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span>
+            <span><b>Automação executada</b><small>Follow-up enviado pelo WhatsApp</small></span>
+            <svg class="icon toast-check"><use href="#i-check"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap hero-connect">
+        <span class="hero-connect-label">Conecte as ferramentas<br>que você já usa</span>
+        <div class="hero-connect-logos" aria-label="WhatsApp, Instagram, Hotmart, Kiwify e Shopify">
+          <span><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg> Instagram</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-fire"/></svg> hotmart</span>
+          <span><span class="kiwify-icon" aria-hidden="true">K</span> kiwify</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> shopify</span>
+        </div>
+      </div>
+      <dl class="wrap overview-metrics" aria-label="Recursos da plataforma">
+        <div><dt>Aplicativos no painel</dt><dd>26</dd></div>
+        <div><dt>Áreas de operação</dt><dd>11</dd></div>
+        <div><dt>Integrações no catálogo</dt><dd>56</dd></div>
+        <div><dt>Atendimento com IA</dt><dd>24h</dd></div>
+      </dl>
+    </section>
+
+    <section class="section showcase showcase-dark" id="api-oficial" aria-labelledby="api-title" data-showcase>
+      <div class="wrap showcase-layout">
+        <div class="showcase-copy">
+          <p class="eyebrow"><span class="signal"></span> API OFICIAL DO WHATSAPP</p>
+          <h2 id="api-title">Seu WhatsApp no CRM. E no celular com Coexistência.</h2>
+          <p>Conecte sua conta pela API Oficial da Meta. Escolha a configuração manual ou a Coexistência, que permite usar o mesmo número no CRM e no app WhatsApp Business em contas elegíveis.</p>
+          <ul class="showcase-list">
+            <li><strong>API Oficial manual.</strong> Configure a conexão da sua conta comercial e gerencie o atendimento pelo CRM.</li>
+            <li><strong>Coexistência (CoEx).</strong> Continue usando o WhatsApp Business no celular enquanto sua equipe atende no painel.</li>
+          </ul>
+          <p class="showcase-note">A Meta pode aplicar restrições conforme suas políticas e a qualidade da conta. <a href="https://business.whatsapp.com/policy?lang=pt_BR" target="_blank" rel="noopener">Política do WhatsApp Business ↗</a></p>
+        </div>
+        <div class="showcase-visual visual-api">
+          <div class="visual-bar"><span><i></i> Conexão WhatsApp Business</span><small>Demonstração</small></div>
+          <div class="connection-tabs" data-tabs role="tablist" aria-label="Tipos de conexão">
+            <button type="button" role="tab" id="tab-api-manual" aria-controls="demo-api-manual" aria-selected="false" tabindex="-1">API Oficial manual</button>
+            <button type="button" role="tab" id="tab-api-coex" aria-controls="demo-api-coex" aria-selected="true">Coexistência</button>
+          </div>
+          <div class="connection-panel" id="demo-api-manual" role="tabpanel" aria-labelledby="tab-api-manual" tabindex="0" hidden>
+            <p class="connection-origin"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp Business Platform</p>
+            <div class="connection-rail"><i></i></div>
+            <div class="connection-endpoints single">
+              <div class="connection-device"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><strong>KAIROS CRM</strong><small>Caixa de entrada da equipe</small></div>
+            </div>
+            <p class="connection-caption">Atenda pelo CRM com a conexão oficial configurada.</p>
+          </div>
+          <div class="connection-panel" id="demo-api-coex" role="tabpanel" aria-labelledby="tab-api-coex" tabindex="0">
+            <p class="connection-origin"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Um número comercial</p>
+            <div class="connection-rail"><i></i></div>
+            <div class="connection-endpoints">
+              <div class="connection-device"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><strong>KAIROS CRM</strong><small>Painel de atendimento</small></div>
+              <div class="connection-device"><svg class="icon" aria-hidden="true"><use href="#i-device"/></svg><strong>WhatsApp Business</strong><small>App no celular</small></div>
+            </div>
+            <p class="connection-caption"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> O mesmo número nos dois lugares.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section showcase" id="atendimento-ia" aria-labelledby="ai-title" data-showcase>
+      <div class="wrap showcase-layout visual-first">
+        <div class="showcase-copy">
+          <p class="eyebrow"><span class="signal"></span> ATENDIMENTO COM IA</p>
+          <h2 id="ai-title">Da primeira resposta à venda, 24 horas por dia.</h2>
+          <p>Configure o agente para tirar dúvidas, qualificar leads, apresentar ofertas e enviar o link de compra. Ele pode encaminhar a conversa para a equipe quando necessário.</p>
+          <ul class="showcase-list">
+            <li>Escuta áudios recebidos e pode responder por áudio.</li>
+            <li>Envia imagens para mostrar produtos, ofertas ou instruções.</li>
+            <li>Registra a qualificação para a equipe continuar o atendimento.</li>
+          </ul>
+          <a class="showcase-link" href="recursos/ia/">Ver as telas do agente de IA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="showcase-visual visual-chat">
+          <div class="visual-bar"><span><i></i> Kai · Agente de IA</span><small>Conversa ilustrativa</small></div>
+          <div class="sample-chat">
+            <div class="sample-message">
+              <span class="sample-label">Cliente · Áudio recebido</span>
+              <span class="voice-message"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg><span class="waveform" aria-hidden="true"></span> 0:08</span>
+              <p>“Oi, vocês têm um plano para duas pessoas?”</p>
+            </div>
+            <div class="sample-message sample-reply">
+              <span class="sample-label">Kai · Resposta por áudio</span>
+              <span class="voice-message"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg><span class="waveform" aria-hidden="true"></span> 0:11</span>
+              <p>“Posso indicar um plano. Quantos números vocês usam?”</p>
+            </div>
+            <div class="sample-image"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg><span><strong>Imagem enviada</strong><small>Comparativo de planos</small></span></div>
+            <div class="sample-status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Lead qualificado <span>•</span> Link de compra enviado</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase showcase-dark" id="disparos" aria-labelledby="broadcast-title" data-showcase>
+      <div class="wrap showcase-layout">
+        <div class="showcase-copy">
+          <p class="eyebrow"><span class="signal"></span> DISPAROS EM MASSA</p>
+          <h2 id="broadcast-title">Envie campanhas para sua lista com mais controle.</h2>
+          <p>Segmente contatos que autorizaram o recebimento, personalize o envio e acompanhe as respostas na mesma caixa de entrada.</p>
+          <ul class="showcase-list">
+            <li>Selecione o público por etiqueta, etapa do funil ou campo personalizado.</li>
+            <li>Use modelos aprovados quando exigidos e respeite os pedidos de descadastro.</li>
+            <li>Agende a campanha e consulte entrega, leitura e respostas.</li>
+          </ul>
+          <a class="showcase-link" href="recursos/campanhas/">Ver a tela de campanhas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="showcase-visual visual-campaign">
+          <div class="visual-bar"><span><i></i> Campanha de WhatsApp</span><small>Fluxo ilustrativo</small></div>
+          <div class="visual-content">
+            <h3>Antes de enviar</h3>
+            <ol class="display-steps">
+              <li><span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span><strong>Público segmentado</strong><small>Clientes que autorizaram o contato</small></span><svg class="icon step-check" aria-hidden="true"><use href="#i-check"/></svg></li>
+              <li><span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg></span><span><strong>Modelo de mensagem</strong><small>Template aprovado para esta campanha</small></span><svg class="icon step-check" aria-hidden="true"><use href="#i-check"/></svg></li>
+              <li><span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><span><strong>Envio programado</strong><small>Horário e canal revisados</small></span><svg class="icon step-check" aria-hidden="true"><use href="#i-check"/></svg></li>
+            </ol>
+            <div class="display-progress" aria-hidden="true"><i></i></div>
+            <p class="visual-foot">Respostas recebidas aparecem no inbox da equipe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section showcase" id="criativos" aria-labelledby="creative-title" data-showcase>
+      <div class="wrap showcase-layout visual-first">
+        <div class="showcase-copy">
+          <p class="eyebrow"><span class="signal"></span> STUDIO DE CRIATIVOS E SOCIAL MEDIA</p>
+          <h2 id="creative-title">Crie as artes e programe as postagens do mês.</h2>
+          <p>Gere imagens e artes ilimitadas, sem cobrança por imagem, no Studio de Criativos habilitado. Monte o calendário do mês e programe a publicação nas redes conectadas.</p>
+          <ul class="showcase-list">
+            <li>Produza variações de artes para campanhas e conteúdo orgânico.</li>
+            <li>Distribua as peças pelo calendário e revise as datas antes de agendar.</li>
+          </ul>
+          <a class="showcase-link" href="recursos/marketing/#calendario">Ver a tela do calendário <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="showcase-visual visual-creative">
+          <div class="visual-bar"><span><i></i> Studio de Criativos</span><small>Fluxo ilustrativo</small></div>
+          <div class="visual-content">
+            <div class="creative-grid" aria-label="Exemplos ilustrativos de artes para redes sociais">
+              <div class="creative-tile tile-green"><strong>Oferta<br>da semana</strong></div>
+              <div class="creative-tile tile-purple"><strong>Novidades<br>do mês</strong></div>
+              <div class="creative-tile tile-blue"><strong>Guia<br>rápido</strong></div>
+            </div>
+            <div class="calendar-sample">
+              <div><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><strong>Calendário de publicações</strong></div>
+              <ol aria-label="Exemplo de programação em uma semana">
+                <li><span>Seg</span><i class="post-dot" aria-label="Agendado"></i></li><li><span>Ter</span></li><li><span>Qua</span><i class="post-dot" aria-label="Agendado"></i></li><li><span>Qui</span></li><li><span>Sex</span><i class="post-dot" aria-label="Agendado"></i></li><li><span>Sáb</span></li><li><span>Dom</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase showcase-dark" id="anuncios" aria-labelledby="ads-title" data-showcase>
+      <div class="wrap showcase-layout">
+        <div class="showcase-copy">
+          <p class="eyebrow"><span class="signal"></span> META ADS E GOOGLE ADS</p>
+          <h2 id="ads-title">Do anúncio à venda, acompanhe tudo no CRM.</h2>
+          <p>Crie e gerencie campanhas da Meta e do Google no módulo de Ads. Acompanhe desempenho e conversões para otimizar as campanhas com os dados do funil.</p>
+          <ul class="showcase-list">
+            <li>Veja a origem dos leads que chegam ao CRM.</li>
+            <li>Use pixels e eventos de conversão para acompanhar vendas.</li>
+            <li>Compare campanhas para decidir onde ajustar o investimento.</li>
+          </ul>
+          <a class="showcase-link" href="recursos/marketing/">Ver o painel de anúncios <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="showcase-visual visual-ads">
+          <div class="visual-bar"><span><i></i> Acompanhamento de campanhas</span><small>Dados ilustrativos</small></div>
+          <div class="visual-content">
+            <div class="ads-channels"><span>Meta Ads</span><span>Google Ads</span></div>
+            <div class="ads-chart" aria-hidden="true"><i style="--height:30%"></i><i style="--height:47%"></i><i style="--height:39%"></i><i style="--height:63%"></i><i style="--height:55%"></i><i style="--height:75%"></i><i style="--height:89%"></i></div>
+            <ol class="ads-funnel" aria-label="Exemplo de rastreamento"><li>Anúncio</li><li>Lead no CRM</li><li>Venda registrada</li></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section showcase" id="prospeccao" aria-labelledby="prospecting-title" data-showcase>
+      <div class="wrap showcase-layout visual-first">
+        <div class="showcase-copy">
+          <p class="eyebrow"><span class="signal"></span> PROSPECÇÃO DE LEADS E EMPRESAS</p>
+          <h2 id="prospecting-title">Encontre empresas que combinam com sua oferta.</h2>
+          <p>Busque negócios por segmento e localização no Google Maps ou pesquise empresas por CNPJ com dados cadastrais da Receita Federal. Organize os resultados para trabalhar as oportunidades no CRM.</p>
+          <ul class="showcase-list">
+            <li><strong>Google Maps.</strong> Encontre negócios locais por atividade e região.</li>
+            <li><strong>Consulta CNPJ.</strong> Pesquise empresas com base nos dados cadastrais disponíveis.</li>
+          </ul>
+          <a class="showcase-link" href="#apps">Conhecer os aplicativos <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="showcase-visual visual-prospecting">
+          <div class="visual-bar"><span><i></i> Prospecção de empresas</span><small>Busca ilustrativa</small></div>
+          <div class="connection-tabs" data-tabs role="tablist" aria-label="Fonte da prospecção">
+            <button type="button" role="tab" id="tab-google-leads" aria-controls="demo-google-leads" aria-selected="true">Google Maps</button>
+            <button type="button" role="tab" id="tab-cnpj-leads" aria-controls="demo-cnpj-leads" aria-selected="false" tabindex="-1">Receita Federal · CNPJ</button>
+          </div>
+          <div class="visual-content prospect-panel" id="demo-google-leads" role="tabpanel" aria-labelledby="tab-google-leads" tabindex="0">
+            <p class="search-example"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg> Cafeterias em Belo Horizonte, MG</p>
+            <div class="prospect-result"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span><strong>Café Aurora</strong><small>Cafeteria · Centro</small></span></div>
+            <div class="prospect-result"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span><strong>Grão do Parque</strong><small>Cafeteria · Savassi</small></span></div>
+            <p class="visual-foot">Empresas fictícias usadas para ilustrar a busca.</p>
+          </div>
+          <div class="visual-content prospect-panel" id="demo-cnpj-leads" role="tabpanel" aria-labelledby="tab-cnpj-leads" tabindex="0" hidden>
+            <p class="search-example"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg> Varejo de alimentos · Minas Gerais</p>
+            <div class="prospect-result"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><span><strong>Aurora Alimentos Ltda.</strong><small>Cadastro empresarial · MG</small></span></div>
+            <div class="prospect-result"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg><span><strong>Parque Comércio Ltda.</strong><small>Cadastro empresarial · MG</small></span></div>
+            <p class="visual-foot">Empresas fictícias usadas para ilustrar a busca.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="plataforma">
+      <div class="wrap">
+        <div class="section-heading paired">
+          <div><p class="eyebrow"><span class="signal"></span> PLATAFORMA</p><h2>Uma operação, do lead<br class="desktop-break"> ao pós-venda.</h2></div>
+          <p>Conecte atendimento, vendas, marketing e gestão. Acompanhe o histórico do cliente desde o primeiro contato.</p>
+        </div>
+
+        <div class="screen-catalog feature-catalog">
+          <a class="screen-card screen-card-featured" href="recursos/atendimento/">
+            <span class="screen-card-media"><img src="assets/telas/atendimento.webp" alt="Caixa de entrada com conversas, histórico e dados do contato" width="1600" height="866" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Atendimento</span>
+              <h3>Atendimento omnichannel</h3>
+              <p>Reúna os canais em uma caixa de entrada com filas, responsáveis e histórico por contato.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/crm/">
+            <span class="screen-card-media"><img src="assets/telas/crm.webp" alt="Quadro Kanban com oportunidades comerciais por etapa" width="1600" height="863" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">CRM</span>
+              <h3>CRM e funil de vendas</h3>
+              <p>Organize contatos e oportunidades no Kanban e acompanhe cada etapa da negociação.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/ia/">
+            <span class="screen-card-media"><img src="assets/telas/ia.webp" alt="Tela de configuração da identidade e das instruções do agente de IA" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Inteligência artificial</span>
+              <h3>Agentes de IA</h3>
+              <p>Configure o atendimento para responder, qualificar interessados e encaminhar conversas.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/automacoes/">
+            <span class="screen-card-media"><img src="assets/telas/automacoes.webp" alt="Editor visual de chatbot com blocos conectados" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Automação</span>
+              <h3>Chatbots e automações</h3>
+              <p>Crie fluxos visuais para triagem, follow-up e recuperação de vendas.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/campanhas/">
+            <span class="screen-card-media"><img src="assets/telas/campanhas.webp" alt="Área de campanhas de WhatsApp com ações de criação e acompanhamento" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Campanhas</span>
+              <h3>Campanhas e disparos</h3>
+              <p>Selecione públicos, prepare mensagens e acompanhe o desempenho de cada campanha.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/agenda/">
+            <span class="screen-card-media"><img src="assets/telas/agenda.webp" alt="Calendário semanal de atendimentos do CRM" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Agenda</span>
+              <h3>Agenda e agendamentos</h3>
+              <p>Centralize compromissos e organize horários da equipe.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/financeiro/">
+            <span class="screen-card-media"><img src="assets/telas/financeiro.webp" alt="Formulário de criação de cobrança no CRM" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Financeiro</span>
+              <h3>Cobranças e pagamentos</h3>
+              <p>Emita cobranças, compartilhe links e acompanhe pagamentos e vencimentos.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/marketing/">
+            <span class="screen-card-media"><img src="assets/telas/marketing.webp" alt="Painel de campanhas com indicadores de anúncios" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Marketing</span>
+              <h3>Anúncios e redes sociais</h3>
+              <p>Acompanhe campanhas, programe conteúdo e relacione conversões ao funil.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/captura/">
+            <span class="screen-card-media"><img src="assets/telas/captura.webp" alt="Editor de formulário com campos e regras" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Captação de leads</span>
+              <h3>Formulários, links e NPS</h3>
+              <p>Crie formulários e links de captura e acompanhe as respostas no CRM.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/documentos/">
+            <span class="screen-card-media"><img src="assets/telas/documentos.webp" alt="Biblioteca de modelos de documentos para assinatura" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Documentos</span>
+              <h3>Documentos e assinaturas</h3>
+              <p>Crie modelos e acompanhe a assinatura de documentos pela plataforma.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/relatorios/">
+            <span class="screen-card-media"><img src="assets/telas/relatorios.webp" alt="Painel geral do CRM com métricas e atividades" width="1600" height="862" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Dados</span>
+              <h3>Relatórios e BI</h3>
+              <p>Acompanhe indicadores de atendimento, campanhas e vendas.</p>
+              <span class="screen-card-action">Ver telas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <p class="screen-credit">Capturas da plataforma-base do KAIROS CRM. Clique no card para ver a tela em tamanho maior e conhecer o recurso.</p>
+
+        <section class="apps-section" id="apps" aria-labelledby="apps-title">
+          <div class="apps-heading">
+            <h3 id="apps-title">Veja os apps no KAIROS CRM</h3>
+            <p>Explore as ferramentas de atendimento, marketing, vendas e gestão reunidas no CRM.</p>
+          </div>
+          <ul class="apps-grid" role="list">
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+              <h4>Agenda</h4><p>Organize compromissos e agendamentos.</p>
+            </li>
+            <li class="app-card app-rose">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-megaphone"/></svg>
+              <h4>Anúncios (Ads)</h4><p>Acompanhe campanhas e resultados de mídia paga.</p>
+            </li>
+            <li class="app-card app-violet">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-spark"/></svg>
+              <h4>Assistente</h4><p>Use IA como apoio nas tarefas da operação.</p>
+            </li>
+            <li class="app-card">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-wa"/></svg>
+              <h4>Chamadas WhatsApp (API Oficial)</h4><p>Faça e receba chamadas por uma conexão oficial compatível.</p>
+            </li>
+            <li class="app-card app-violet">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-chart"/></svg>
+              <h4>Dashboards BI</h4><p>Acompanhe indicadores em painéis de dados.</p>
+            </li>
+            <li class="app-card app-violet">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-doc"/></svg>
+              <h4>Documentos</h4><p>Gere documentos e acompanhe assinaturas.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              <h4>E-mails</h4><p>Crie e envie campanhas de e-mail.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-building"/></svg>
+              <h4>Empresas</h4><p>Organize o cadastro das empresas da sua carteira.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-form"/></svg>
+              <h4>Formulários</h4><p>Crie formulários para coletar dados e captar leads.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-pin"/></svg>
+              <h4>Google Meu Negócio</h4><p>Conecte o Perfil da Empresa no Google à sua operação.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-cloud"/></svg>
+              <h4>Grupos (Cloud API)</h4><p>Gerencie grupos pela API oficial em contas elegíveis.</p>
+            </li>
+            <li class="app-card app-violet">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-users"/></svg>
+              <h4>Grupos e Comunidades</h4><p>Organize grupos, convites e mensagens do WhatsApp.</p>
+            </li>
+            <li class="app-card app-rose">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-window"/></svg>
+              <h4>Landing Pages</h4><p>Crie páginas com IA para apresentar ofertas e captar contatos.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-phone"/></svg>
+              <h4>Ligações pelo WhatsApp</h4><p>Organize e acompanhe o atendimento por voz.</p>
+            </li>
+            <li class="app-card app-amber">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-trophy"/></svg>
+              <h4>Metas e Conquistas</h4><p>Defina metas e acompanhe o progresso da equipe.</p>
+            </li>
+            <li class="app-card app-amber">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-star"/></svg>
+              <h4>NPS</h4><p>Meça a disposição dos clientes para recomendar seu negócio.</p>
+            </li>
+            <li class="app-card app-rose">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-cursor"/></svg>
+              <h4>Pixels de Conversão</h4><p>Configure pixels para medir conversões das campanhas.</p>
+            </li>
+            <li class="app-card app-amber">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-package"/></svg>
+              <h4>Produtos / Serviços</h4><p>Cadastre e organize seu catálogo de ofertas.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-board"/></svg>
+              <h4>Projetos</h4><p>Acompanhe tarefas, prazos e responsáveis pelas entregas.</p>
+            </li>
+            <li class="app-card app-violet">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-send"/></svg>
+              <h4>Propostas</h4><p>Envie propostas comerciais e acompanhe o aceite.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <h4>Prospecção</h4><p>Busque potenciais clientes por CNPJ ou Google Maps.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-link"/></svg>
+              <h4>Redirect URL</h4><p>Crie links que redirecionam para as páginas das suas campanhas.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-share"/></svg>
+              <h4>Social Media</h4><p>Planeje e programe publicações nas redes conectadas.</p>
+            </li>
+            <li class="app-card app-violet">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-palette"/></svg>
+              <h4>Studio de Criativos</h4><p>Crie peças visuais para suas campanhas.</p>
+            </li>
+            <li class="app-card app-blue">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-phone"/></svg>
+              <h4>VoIP — Número próprio</h4><p>Atenda chamadas pela internet com seu próprio número.</p>
+            </li>
+            <li class="app-card">
+              <svg class="icon app-icon" aria-hidden="true"><use href="#i-flow"/></svg>
+              <h4>WhatsApp Flows</h4><p>Crie formulários interativos dentro do WhatsApp.</p>
+            </li>
+          </ul>
+          <p class="apps-note">A disponibilidade dos aplicativos varia conforme o plano.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section solution-section" id="solucoes">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="signal"></span> SOLUÇÕES</p>
+          <h2>Como você vende hoje?</h2>
+          <p>Escolha seu tipo de negócio e veja um exemplo de operação.</p>
+        </div>
+        <div class="solution-grid">
+          <div role="tablist" aria-label="Tipo de negócio" aria-orientation="vertical" class="solution-tabs" data-tabs>
+            <button type="button" role="tab" id="seg-agencias" aria-controls="use-agencias" aria-selected="true"><span>Agências e marketing digital</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" role="tab" id="seg-infoprodutos" aria-controls="use-infoprodutos" aria-selected="false" tabindex="-1"><span>Infoprodutores</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" role="tab" id="seg-afiliados" aria-controls="use-afiliados" aria-selected="false" tabindex="-1"><span>Afiliados</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" role="tab" id="seg-lojas" aria-controls="use-lojas" aria-selected="false" tabindex="-1"><span>E-commerces</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" role="tab" id="seg-saas" aria-controls="use-saas" aria-selected="false" tabindex="-1"><span>Empresas SaaS</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" role="tab" id="seg-fintech" aria-controls="use-fintech" aria-selected="false" tabindex="-1"><span>Fintechs</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" role="tab" id="seg-pme" aria-controls="use-pme" aria-selected="false" tabindex="-1"><span>Pequenas e médias empresas</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div>
+            <article class="solution-pane" role="tabpanel" id="use-agencias" aria-labelledby="seg-agencias" tabindex="0">
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg></span>
+              <h3>Do clique no anúncio ao atendimento.</h3><p>Identifique de qual campanha o lead veio, encaminhe a conversa para a equipe certa e acompanhe os avanços no funil.</p>
+              <ol class="journey"><li>Anúncio ou formulário</li><li>Lead no CRM</li><li>Follow-up e relatório</li></ol>
+            </article>
+            <article class="solution-pane" role="tabpanel" id="use-infoprodutos" aria-labelledby="seg-infoprodutos" tabindex="0" hidden>
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-fire"/></svg></span>
+              <h3>Organize o atendimento do lançamento.</h3><p>Conecte sua plataforma de vendas e use eventos de compra para recuperar pagamentos pendentes e enviar boas-vindas após a aprovação.</p>
+              <ol class="journey"><li>Evento no checkout</li><li>Fluxo no CRM</li><li>Recuperação ou boas-vindas</li></ol>
+            </article>
+            <article class="solution-pane" role="tabpanel" id="use-afiliados" aria-labelledby="seg-afiliados" tabindex="0" hidden>
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span>
+              <h3>Guie suas vendas no WhatsApp 1:1.</h3><p>Use etiquetas para separar as ofertas, qualifique interessados e agende retornos para manter cada oportunidade visível.</p>
+              <ol class="journey"><li>Conversa no WhatsApp</li><li>Qualificação</li><li>Proposta e retorno</li></ol>
+            </article>
+            <article class="solution-pane" role="tabpanel" id="use-lojas" aria-labelledby="seg-lojas" tabindex="0" hidden>
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>
+              <h3>Retome compras e acompanhe pedidos.</h3><p>Use eventos da loja para acionar mensagens de recuperação. Centralize dúvidas sobre pedidos e mantenha o histórico para o pós-venda.</p>
+              <ol class="journey"><li>Evento da loja</li><li>Mensagem de recuperação</li><li>Atendimento pós-venda</li></ol>
+            </article>
+            <article class="solution-pane" role="tabpanel" id="use-saas" aria-labelledby="seg-saas" tabindex="0" hidden>
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+              <h3>Da primeira demonstração à ativação.</h3><p>Qualifique leads, agende demos e use eventos do produto para disparar mensagens de ativação ou encaminhar o contato ao suporte.</p>
+              <ol class="journey"><li>Lead qualificado</li><li>Demo agendada</li><li>Fluxo de ativação</li></ol>
+            </article>
+            <article class="solution-pane" role="tabpanel" id="use-fintech" aria-labelledby="seg-fintech" tabindex="0" hidden>
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+              <h3>Direcione cada solicitação para a fila certa.</h3><p>Separe dúvidas comerciais, onboarding e suporte. A equipe pode consultar o histórico e acompanhar pendências no mesmo atendimento.</p>
+              <ol class="journey"><li>Contato recebido</li><li>Triagem por assunto</li><li>Atendimento por setor</li></ol>
+            </article>
+            <article class="solution-pane" role="tabpanel" id="use-pme" aria-labelledby="seg-pme" tabindex="0" hidden>
+              <span class="solution-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <h3>Organize a rotina comercial de toda a equipe.</h3><p>Distribua conversas, envie propostas e acompanhe os negócios em aberto. Use agenda, tarefas e lembretes para manter os retornos em dia.</p>
+              <ol class="journey"><li>Pedido de orçamento</li><li>Proposta comercial</li><li>Acompanhamento</li></ol>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="integracoes">
+      <div class="wrap">
+        <div class="section-heading paired">
+          <div><p class="eyebrow"><span class="signal"></span> INTEGRAÇÕES</p><h2>Conecte o CRM à sua operação.</h2></div>
+          <p>Explore 56 integrações no catálogo, entre pagamentos, ERP, lojas, plataformas de venda, agendas e API aberta.</p>
+        </div>
+        <div class="screen-catalog integration-catalog">
+          <a class="screen-card" href="recursos/pagamentos/">
+            <span class="screen-card-media"><img src="assets/telas/pagamentos.webp" alt="Tela de configuração da integração com o Asaas" width="900" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Pagamentos · 4</span>
+              <h3>Integrações de pagamento</h3>
+              <p>Conecte um gateway para gerar cobranças e acompanhar a confirmação do pagamento.</p>
+              <span class="screen-card-action">Ver integração <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/ecommerce/">
+            <span class="screen-card-media"><img src="assets/telas/ecommerce.webp" alt="Tela de configuração da integração com WooCommerce" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">E-commerce e ERP · 8</span>
+              <h3>Integrações de e-commerce e ERP</h3>
+              <p>Conecte o CRM à loja, aos pedidos e aos sistemas de gestão que sua operação usa.</p>
+              <span class="screen-card-action">Ver integração <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/infoprodutos/">
+            <span class="screen-card-media"><img src="assets/telas/infoprodutos.webp" alt="Tela de configuração da integração com a Hotmart" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Infoprodutos · 7</span>
+              <h3>Integrações de plataformas de venda</h3>
+              <p>Use eventos de checkout para acionar boas-vindas e recuperar vendas pendentes.</p>
+              <span class="screen-card-action">Ver integração <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="screen-card" href="recursos/agendas/">
+            <span class="screen-card-media"><img src="assets/telas/agendas.webp" alt="Tela de configuração da integração com o Google Agenda" width="1280" height="720" loading="lazy" decoding="async"></span>
+            <div class="screen-card-copy">
+              <span class="screen-card-label">Agendas · 9</span>
+              <h3>Integrações de agenda</h3>
+              <p>Conecte o calendário que sua equipe já usa e centralize seus compromissos.</p>
+              <span class="screen-card-action">Ver integração <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+        </div>
+        <details class="integration-full" id="catalogo-integracoes">
+          <summary class="catalog-toggle">Ver catálogo completo <svg class="icon expand-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <div class="integration-grid">
+              <details open><summary><span><svg class="icon" aria-hidden="true"><use href="#i-fire"/></svg> Infoprodutos</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Braip, Cakto, Eduzz, Hotmart, Kiwify, Logzz e Sympla.</p></details>
+              <details open><summary><span><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> E-commerce e ERP</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Bling, Conta Azul, Olist, Omie, Power BI, Shopify, Tiny ERP e WooCommerce.</p></details>
+              <details open><summary><span><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg> Pagamentos</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Asaas, InfinitePay, Mercado Pago e Stripe.</p></details>
+              <details open><summary><span><svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg> Marketing e anúncios</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Facebook Lead Ads, formulários do Google Ads, Google Meu Negócio, Google Sheets, pixels de conversão e RD Station Marketing.</p></details>
+              <details><summary><span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> Agendas</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Cal.com, Calendly, ClinicWeb, Clinicorp, Clínica nas Nuvens, Google Agenda, Outlook, Serodonto e iCloud.</p></details>
+              <details><summary><span><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> API e automação</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>API REST, webhooks de entrada e saída, redirecionamento de URL, provedores de IA e voz, n8n, Make e Zapier.</p></details>
+              <details><summary><span><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg> Portais e marketplaces</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Chaves na Mão para imóveis e veículos, consulta de placas, OLX Anúncios, VivaReal + ZAP e Webmotors.</p></details>
+              <details><summary><span><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg> Sistemas de gestão</span><svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Agendor, Atlaz, HubSoft ISP, IGUT, Perfex CRM e sua API REST, Pipedrive, ReceitaNet e SGP.</p></details>
+          </div>
+        </details>
+        <p class="section-note">A disponibilidade de módulos e integrações depende do plano e da configuração.</p>
+      </div>
+    </section>
+
+    <section class="section plan-section" id="planos">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="signal"></span> PLANOS</p>
+          <h2>Planos para cada fase da operação.</h2>
+        </div>
+        <div class="plan-grid">
+          <article class="plan" aria-labelledby="plan-starter">
+            <h3 id="plan-starter">Starter</h3>
+            <p class="plan-description">Para conhecer o KAIROS CRM e testar os recursos na prática.</p>
+            <div class="plan-price">R$ 47,90 <small>/ mês</small></div>
+            <a class="button button-outline" href="https://kairoscrm.online/register?plan=kairoscrm-plano-starter">Escolher Starter <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="plan-resources">Recursos do Starter</p>
+            <ul class="checks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>1 conexão manual por QR Code (não oficial) e 2 usuários</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>1 atendente de IA com 200.000 tokens de IA por mês</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>100 créditos de prospecção no Google</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Painel Kanban para organizar leads</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>500 disparos em massa</span></li>
+            </ul>
+            <details class="plan-details">
+              <summary>Mais recursos do Starter <svg class="icon expand-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <ul>
+                <li>Importação e exportação de leads</li>
+                <li>Chatbot de arrastar e soltar e sequências manuais</li>
+                <li>Chat interno para a equipe</li>
+                <li>Mensagens rápidas ilimitadas</li>
+                <li>Etiquetas ilimitadas</li>
+                <li>Encurtador de links</li>
+                <li>Webchat</li>
+              </ul>
+            </details>
+          </article>
+          <article class="plan plan-featured" aria-labelledby="plan-pro">
+            <h3 id="plan-pro">PRO</h3>
+            <p class="plan-description">Para empresas com processos definidos que querem crescer com automação e IA.</p>
+            <div class="plan-price">R$ 147,90 <small>/ mês</small></div>
+            <a class="button button-lime" href="https://kairoscrm.online/register?plan=kairoscrm-plano-pro">Escolher PRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="plan-resources">Tudo do Starter, com os limites e recursos abaixo</p>
+            <ul class="checks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>3 conexões e 3 usuários</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>2 atendentes de IA com 1.500.000 tokens de IA por mês</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>API Oficial do WhatsApp manual e com Coexistência (Coex)</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Módulo de Ads para gerenciar campanhas da Meta e do Google</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>3.000 disparos em massa</span></li>
+            </ul>
+            <details class="plan-details">
+              <summary>Mais recursos do PRO <svg class="icon expand-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <ul>
+                <li>Social Media para agendar publicações</li>
+                <li>Studio de Criativos para criar artes e posts</li>
+                <li>Webhooks de entrada e saída</li>
+                <li>BrAIn, gerente virtual que analisa conversas</li>
+                <li>E-mail marketing</li>
+                <li>Formulários personalizados</li>
+                <li>Avaliações do Google Meu Negócio</li>
+                <li>NPS com pesquisas, links e campanhas</li>
+                <li>Gestão de grupos e comunidades</li>
+                <li>Pixel de conversão</li>
+                <li>Catálogo de produtos e serviços</li>
+                <li>Integrações com Cakto, Braip, Hotmart, Logzz, Eduzz, Shopify e WooCommerce</li>
+                <li>Google Sheets conectado via IA</li>
+              </ul>
+            </details>
+          </article>
+          <article class="plan" aria-labelledby="plan-ultimate">
+            <h3 id="plan-ultimate">Ultimate</h3>
+            <p class="plan-description">Para empresas consolidadas com prospecção ativa, várias integrações e atendimento em escala.</p>
+            <div class="plan-price">R$ 247,90 <small>/ mês</small></div>
+            <a class="button button-outline" href="https://kairoscrm.online/register?plan=kairoscrm-plano-ultimate">Escolher Ultimate <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="plan-resources">Tudo do Starter e do PRO, com os limites e recursos abaixo</p>
+            <ul class="checks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>5 conexões e 5 usuários</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>5 atendentes de IA com 10.000.000 de tokens de IA por mês</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>WhatsApp em modo híbrido</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Follow-up automático com IA</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Disparos em massa ilimitados no plano</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Prospecção ilimitada no Google Meu Negócio</span></li>
+            </ul>
+            <details class="plan-details">
+              <summary>Mais recursos do Ultimate <svg class="icon expand-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <ul>
+                <li>No modo híbrido, o número fica vinculado à API Oficial. A conexão não oficial envia e recebe as mensagens, com foco em reduzir custos de envio.</li>
+                <li>Social Media para agendar publicações</li>
+                <li>Studio de Criativos para criar artes e posts</li>
+                <li>Clonagem de voz com ElevenLabs e MiniMax</li>
+                <li>Integração com Google Agenda</li>
+                <li>Mercado Livre, Shopee, TikTok e OLX</li>
+                <li>Clínica nas Nuvens, Clinicorp e Perfex CRM</li>
+              </ul>
+            </details>
+          </article>
+        </div>
+        <aside class="plan-addons" aria-labelledby="plan-addons-title">
+          <h3 id="plan-addons-title">Adicionais do Ultimate</h3>
+          <dl>
+            <div><dt>Envio de SMS</dt><dd><strong>R$ 0,25</strong> por mensagem de até 160 caracteres</dd></div>
+            <div><dt>Prospecção de CNPJ na Receita Federal</dt><dd><strong>R$ 50</strong> por mês</dd></div>
+            <div><dt>WVOIP para ligações e atendimento com IA</dt><dd><strong>R$ 45</strong> por conexão</dd></div>
+          </dl>
+        </aside>
+        <p class="section-note">O envio pelo WhatsApp segue as políticas e os limites do canal.</p>
+      </div>
+    </section>
+
+    <section class="section light-section guarantee-section" id="garantia" aria-labelledby="guarantee-title">
+      <div class="wrap">
+        <div class="guarantee-card">
+          <span class="guarantee-icon" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+          <div class="guarantee-copy">
+            <p class="eyebrow"><span class="signal"></span> GARANTIA</p>
+            <h2 id="guarantee-title">7 dias para exercer o direito de arrependimento.</h2>
+            <p>Nas contratações online abrangidas pelo Código de Defesa do Consumidor, o prazo conta da assinatura do contrato ou do recebimento do serviço, conforme o caso. Ao cancelar dentro do prazo, você tem direito à devolução integral dos valores pagos.</p>
+            <a href="https://consumidor.gov.br/pages/conteudo/publico/102" target="_blank" rel="noopener">Consulte o art. 49 do CDC <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="duvidas" aria-labelledby="faq-title">
+      <div class="wrap faq-layout">
+        <div class="section-heading"><p class="eyebrow"><span class="signal"></span> DÚVIDAS FREQUENTES</p><h2 id="faq-title">Antes de começar.</h2></div>
+        <div class="faq-list">
+          <details><summary>Posso usar a API oficial do WhatsApp?<svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Sim. Você pode configurar a API Oficial manualmente ou usar a Coexistência em contas elegíveis para manter o mesmo número no CRM e no WhatsApp Business do celular. Modelos de mensagem e ligações seguem as condições da conta e do plano.</p></details>
+          <details><summary>O KAIROS ajuda a recuperar vendas pendentes?<svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Sim. Com uma integração ou webhook compatível, você pode usar eventos como compra iniciada e pagamento pendente para organizar o funil e configurar lembretes.</p></details>
+          <details><summary>Preciso programar para configurar automações?<svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Você pode montar chatbots e workflows no editor visual. Integrações sob medida via API ou webhook podem exigir configuração técnica.</p></details>
+          <details><summary>O que conta como uma conexão?<svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Uma conexão é um canal vinculado ao CRM, como um número de WhatsApp ou uma conta de Instagram. Confira os limites e canais disponíveis no seu plano.</p></details>
+          <details><summary>O agente de IA pode transferir o atendimento?<svg class="icon expand-icon"><use href="#i-plus"/></svg></summary><p>Sim. Você pode configurar critérios para a IA qualificar contatos, encaminhar a conversa a uma pessoa e manter o histórico para a equipe.</p></details>
+        </div>
+        <aside class="faq-contact" aria-labelledby="faq-contact-title">
+          <h3 id="faq-contact-title">Ficou com alguma dúvida?</h3>
+          <p>Fale com a equipe do KAIROS CRM pelo canal que preferir.</p>
+          <div class="faq-contact-actions">
+            <a class="button button-lime" href="https://kairoscrm.online/p/whatsapp-duvidas" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Falar no WhatsApp</a>
+            <a class="button button-outline" href="https://www.instagram.com/crmkairos/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg> Ver no Instagram</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-cta-inner">
+        <div><h2>Pronto para organizar<br>suas vendas?</h2><p>Crie sua conta e comece a montar sua operação no KAIROS CRM.</p></div>
+        <a class="button button-lime" href="https://kairoscrm.online/register">Criar minha conta <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#inicio" aria-label="KAIROS CRM, início"><img src="assets/kairos-logo.png" alt="KAIROS CRM" width="136" height="37" loading="lazy"></a>
+      <nav aria-label="Navegação do rodapé"><a href="#plataforma">Plataforma</a><a href="#planos">Planos</a><a href="#garantia">Garantia</a><a href="#duvidas">Dúvidas</a><a href="https://kairoscrm.online/login">Acessar o CRM <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a></nav>
+      <small>© 2026 KAIROS CRM</small>
+      <button class="marketing-settings" type="button" data-marketing-settings hidden>Preferências de cookies</button>
+    </div>
+  </footer>
+  <section class="marketing-consent" data-marketing-consent aria-labelledby="marketing-title" hidden>
+    <h2 id="marketing-title">Cookies de publicidade</h2>
+    <p>Se você autorizar, enviamos à Meta informações sobre a visita e cliques para medir anúncios. Você pode mudar sua escolha no rodapé.</p>
+    <div class="marketing-actions">
+      <button class="button button-outline" type="button" data-choice="rejected">Recusar</button>
+      <button class="button button-lime" type="button" data-choice="accepted">Aceitar</button>
+    </div>
+  </section>
+</body>
 </html>
